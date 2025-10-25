@@ -24,7 +24,7 @@ app.post('/api/generate-feedback', async (req, res) => {
     
 
     const data = await response.json();
-    console.log("Response Data : "+data);
+    console.log("Response Data : "+JSON.stringify(data));
     const feedback = data.choices?.[0]?.message?.content || "No feedback received";
     res.json({ feedback });
 });
