@@ -21,9 +21,10 @@ app.post('/api/generate-feedback', async (req, res) => {
             messages: [{ role: 'user', content: `Give feedback on this essay (also put in a percent at the beginning which is the grade of the essay! for ex: 30% {feedback}): ${essay}` }]
         })
     });
-    console.log("Response : "+response);
+    
 
     const data = await response.json();
+    console.log("Response : "+data);
     const feedback = data.choices?.[0]?.message?.content || "No feedback received";
     res.json({ feedback });
 });
