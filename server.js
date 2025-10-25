@@ -17,7 +17,7 @@ app.post('/api/generate-feedback', async (req, res) => {
             'Authorization': `Bearer ${process.env.OPENROUTER_API_KEY}`
         },
         body: JSON.stringify({
-            model: 'deepseek/deepseek-chat-v3-0324:free',
+            model: 'deepseek/deepseek-r1-0528-qwen3-8b:free',
             messages: [{ role: 'user', content: `Give feedback on this essay (also put in a percent at the beginning which is the grade of the essay! for ex: 30% {feedback}): ${essay}` }]
         })
     });
